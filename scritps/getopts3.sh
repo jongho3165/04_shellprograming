@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#   ./getopts1.sh -x -y 200
+
+Usage() {
+    echo "Usage : $0 {-x | -y optarg1}"
+    exit 1
+}
+
+while getopts xy: options 2>/dev/null
+do
+    case $options in
+        x) echo "INPUT is X!!" ;;
+        y) echo "INPUT is Y!! and arg is $OPTARG" ;;
+        \?) Usage ;;
+        *) Usage ;;
+    esac
+done
