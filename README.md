@@ -1,16 +1,22 @@
 배시 쉘 프로그래밍
 
+
 1. 선수 지식
+
 	1) 명령어 
+	
 		grep CMD
+		
 			# grep OPTIONS PATTERNS file1
 			OPTIONS : -i, -v, -l, -n, -r, -w
 			PATTENS : *, ., ^root, root$, [abc], [a-c], [^a]   (''는 안의 내용을 해석하지 않음, ""는 해석)
 		sed CMD
+		
 			p CMD) # sed -n '1,3p' /etc/hosts
 			p CMD) # sed '1,3d' /etc/hosts
 			p CMD) # sed '/main/s/192.168.10.10/192.168.10.20/' /etc/hosts
 		awk CMD
+		
 			# awk 'statement {action}' file
 			Ex. # df -h / | tail -1 | awk '{print $6}' | awk -F% '{print $1}'
 				# ifconfig eth0 | grep inet | grep -v inet6 | awk '{print $2}' | awk -F: '{print $2}'
